@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // node backend server framework
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -32,11 +32,11 @@ const friends = [
 	},
 ];
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // tells express that we are receiving json
 
 app.use(cors());
 
-app.get('/friends', (req, res) => {
+app.get('/friends', (req, res) => { // get existing info
 	res.send(friends);
 });
 
@@ -45,7 +45,7 @@ app.post('/new-friend', (req, res) => {
 	res.send(friends);
 });
 
-app.put('/update-friend', (req, res) => {
+app.put('/update-friend', (req, res) => { // update existing info
 	const index = req.body.index;
 	friends[index] = req.body.update;
 	res.send(friends);
@@ -57,6 +57,6 @@ app.delete('/delete-friend', (req, res) => {
 	res.send(friends);
 });
 
-app.listen(5000, () => {
+app.listen(5000, () => { // immediately invoked f(x) expression
 	console.log('server listening on port 5000');
 });
