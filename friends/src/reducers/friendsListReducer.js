@@ -1,5 +1,6 @@
-import { combineReducers } from 'redux';
 import { GET_FRIENDS } from '../actions';
+import { ADD_FRIENDS } from '../actions';
+// when do we know to make a new action / reducer ?
 
 const dummyState = [
 	{
@@ -16,6 +17,8 @@ const dummyState = [
 const friendsReducer = (state = dummyState, action) => {
 	switch(action.type) {
 		case GET_FRIENDS:
+			return action.payload.data;
+		case ADD_FRIENDS:
 			return action.payload.data;
 		default:
 			return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';  // design the state object - w props; build reducers w/ dummy data; create actions 
 import FriendsList from './containers/FriendsList';
+import AddFriend from './containers/AddFriend';
 
 
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>hiii world:)</h1>
+    	<AddFriend />
     	<FriendsList />
       </div>
     );

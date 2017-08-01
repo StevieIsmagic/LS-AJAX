@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
     // EXAMPLE:
     // const mapStateToProps = (state) => {
     // return {
-    //     friends: state.friends << this one. State is passed from redux and friends is prop of State.
+    //     amigo: state.friends << this one. State is passed from redux and friends is prop of State.
     // };
 });
 

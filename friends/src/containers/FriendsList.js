@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getFriends } from '../actions';
 import { bindActionCreators } from 'redux';
+//import { addFriend } from '../actions'
 
 class FriendsList extends Component {
-  //missing componentDidMount() ...wait for Antonio
   componentDidMount() {
-    this.props.getFriends();
+    this.props.getAmigos();
   }
 
   render() {
     return (
       <div>
         <ul>
-          {this.props.trump.map((friend, i) => {
+          {this.props.amigo.map((friend, i) => {
             return (
               <li key={i}>
                 <p>{`Friend ${i + 1}`}</p>
@@ -31,13 +31,13 @@ class FriendsList extends Component {
 
 const mapStateToProps = (state) => {
   return {   
-    trump: state.friends // << this friends comes from redux state
- /* ^^^ this friends aka trump will become props on map function */
+    amigo: state.friends // << this friends comes from redux state
+ /* ^^^ this friends aka amigo will become props on map function */
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({getFriends: getFriends}, dispatch);
+  return bindActionCreators({getAmigos: getFriends}, dispatch);
                           // REACT side: REDUX side
                                       // getFriends is imported from actions
 };
