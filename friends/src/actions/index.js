@@ -12,8 +12,9 @@ export const getFriends = () => { // getFriends() function will be mapped: mapDi
 	};
 };
 
-export const addFriend = () => {
-	const promise = axios.post('http://localhost:5000/new-friend');
+export const addFriend = (newFriend) => {
+	console.log(newFriend);
+	const promise = axios.post('http://localhost:5000/new-friend', newFriend);
 	return {
 		type: ADD_FRIENDS,
 		payload: promise

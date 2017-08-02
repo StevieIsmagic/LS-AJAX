@@ -13,14 +13,18 @@ class FriendsList extends Component {
     return (
       <div>
         <ul>
-          {this.props.amigo.map((friend, i) => {
+          {this.props.amigo.slice(0).reverse().map((friend, i) => {
             return (
+
               <li key={i}>
+                <hr/>
                 <p>{`Friend ${i + 1}`}</p>
                 <p>{`Name: ${friend.name}`}</p>
                 <p>{`Age: ${friend.age}`}</p>
                 <p>{`Email: ${friend.email}`}</p>
+
               </li>
+
               );
           })}
         </ul>
