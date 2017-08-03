@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { getFriends } from '../actions';
 import { bindActionCreators } from 'redux';
 //import { addFriend } from '../actions'
+// import Friend from './Friend'
+import Friend from '../components/Friend';
 
 class FriendsList extends Component {
   componentDidMount() {
@@ -12,28 +14,20 @@ class FriendsList extends Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.props.amigo.slice(0).reverse().map((friend, i) => {
-            return (
-
-              <li key={i}>
-                <hr/>
-                <p>{`Friend ${i + 1}`}</p>
-                <p>{`Name: ${friend.name}`}</p>
-                <p>{`Age: ${friend.age}`}</p>
-                <p>{`Email: ${friend.email}`}</p>
-
-              </li>
-
-              );
-          })}
+        <ul>                                       
+          {this.props.amigo.slice(0).reverse().map((ami, indigo) => { // amigo coming from redux state, ami and indigo is a parameter                                        
+            return (                              // in the callback function
+              // replace all this with friend component.
+              <Friend amico={ami} i={indigo}/>// Friend is or Friend component we made in Friend.js.                         
+            );// We need to pass this data into our Friend component. We are in the parent and need to pass props to our Child. No need to export see we are passing props to the Chld.
+          })} 
         </ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { // specifies what part of redux state tree does this individual component require/ need access to
   return {   
     amigo: state.friends // << this friends comes from redux state
  /* ^^^ this friends aka amigo will become props on map function */

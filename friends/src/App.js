@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';  // design the state object - w props; build reducers w/ dummy data; create actions 
+import './App.css';  
 import FriendsList from './containers/FriendsList';
 import AddFriend from './containers/AddFriend';
-
+//BASIC PROJECT WORKFLOW >> design the state object - w/ props >> build reducers w/ dummy data >> create actions 
 
 class App extends Component {
   render() {
